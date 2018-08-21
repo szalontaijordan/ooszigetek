@@ -25,9 +25,7 @@ public class Main {
 
     public static void main(String[] args) {
         int index = args.length > 0 ? Integer.parseInt(args[0]): 6;
-        
-        for (int i = 0; i< ISLANDS.length; i++) {
-        String island = getIslandSrc(ISLANDS[i]);
+        String island = getIslandSrc(ISLANDS[index]);
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(island));
@@ -37,13 +35,13 @@ public class Main {
             System.out.println(String.format("Number of islands: %d", parser.getIslandCount()));
             System.out.println(String.format("Map size: %d", parser.getCache().length * parser.getCache()[0].length));
             System.out.println();
-            //int id = 1;
+            int id = 1;
 
-            //System.out.printf("Island %d:\n", id);
-            //printIsland(parser, id);
+            System.out.printf("Island %d:\n", id);
+            printIsland(parser, id);
         } catch (IOException e) {
             e.printStackTrace();
-        }}
+        }
     }
 
     /**
